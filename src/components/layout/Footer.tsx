@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Zap, Github, Linkedin, Mail } from "lucide-react";
+import { Zap, Share2, ExternalLink, Mail } from "lucide-react";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -34,13 +34,13 @@ export function Footer() {
                 href="#"
                 className="w-8 h-8 glass rounded-lg flex items-center justify-center text-gray-400 hover:text-brand-blue transition-colors"
               >
-                <Linkedin className="w-4 h-4" />
+                <ExternalLink className="w-4 h-4" />
               </a>
               <a
                 href="#"
                 className="w-8 h-8 glass rounded-lg flex items-center justify-center text-gray-400 hover:text-brand-purple-light transition-colors"
               >
-                <Github className="w-4 h-4" />
+                <Share2 className="w-4 h-4" />
               </a>
             </div>
           </div>

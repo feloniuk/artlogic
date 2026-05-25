@@ -1,33 +1,9 @@
-*.log
-.DS_Store
-.env
-.env.backup
-.env.production
-.env.prod
-.phpactor.json
-.phpunit.result.cache
-/.fleet
-/.idea
-/.nova
-/.phpunit.cache
-/.vscode
-/.zed
-/.claude
-CLAUDE.md
-/auth.json
 /node_modules
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
-/storage/pail
-/vendor
-/dump
-Homestead.json
-Homestead.yaml
-Thumbs.db
-nul
-Приоритеты_для_рекламы_ЦЕНЫ.xlsx
-Пропозиція_на_допрацюванняс_ЕЛЕПАС_ТОВ (4).docx
-Копия Приоритеты_для_рекламы_на_120326_v3.xlsx
-Пропозиція_на_допрацюванняс_ЕЛЕПАС_ТОВ (3).docx
+/.next/
+/out/
+.DS_Store
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+/prisma/migrations/*
+!/prisma/migrations/.gitkeep
