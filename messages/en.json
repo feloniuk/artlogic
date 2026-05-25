@@ -1,0 +1,185 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contacts": "Contact",
+    "getStarted": "Get a Consultation"
+  },
+  "hero": {
+    "badge": "IT Automation for Business",
+    "title": "We Automate Business Processes",
+    "titleHighlight": "so you can focus on growth",
+    "subtitle": "CRM/ERP integrations, document workflow automation, chatbots and custom software development for small and medium businesses in Ukraine.",
+    "ctaPrimary": "Get a Consultation",
+    "ctaSecondary": "Our Services"
+  },
+  "stats": {
+    "clients": "Satisfied Clients",
+    "projects": "Completed Projects",
+    "years": "Years of Experience",
+    "uptime": "Service Uptime"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions for your business digitalization",
+    "crm": {
+      "title": "CRM/ERP Integrations",
+      "description": "Setup and integration of Bitrix24, SAP, and other platforms tailored to your unique business processes."
+    },
+    "edi": {
+      "title": "Document Workflow Automation",
+      "description": "Electronic document management, EDI, e-invoicing and automatic report generation between counterparties."
+    },
+    "bots": {
+      "title": "Chatbots & AI Assistants",
+      "description": "Development of Telegram/Viber bots and AI assistants to automate customer communications."
+    },
+    "custom": {
+      "title": "Custom Software Development",
+      "description": "Development of individual software solutions — from MVP to a full-scale platform."
+    },
+    "web": {
+      "title": "Web Applications",
+      "description": "Refinement, refactoring and scaling of existing web systems and business portals."
+    },
+    "learnMore": "Learn More"
+  },
+  "dashboard": {
+    "title": "Your Business Under Control",
+    "subtitle": "Centralized management panel for all integrations and processes"
+  },
+  "cta": {
+    "title": "Ready to Automate Your Business?",
+    "subtitle": "Get a free consultation and discover how we can help your company reach the next level.",
+    "button": "Contact Us"
+  },
+  "about": {
+    "pageTitle": "About ArtLogic",
+    "pageSubtitle": "We help businesses grow through technology",
+    "story": {
+      "title": "Our Story",
+      "p1": "ArtLogic was founded in 2018 by a team of engineers with extensive experience in large corporate systems. We saw that small and medium-sized businesses in Ukraine needed the same automation tools as large corporations — but at accessible prices.",
+      "p2": "Today we help companies across Ukraine implement smart solutions: from simple integrations to complex business platforms. Our goal is to make your company more efficient and free you from routine tasks."
+    },
+    "values": {
+      "title": "Our Values",
+      "reliability": {
+        "title": "Reliability",
+        "desc": "Your business can't stop — our solutions work 24/7 and are supported at any time."
+      },
+      "clarity": {
+        "title": "Transparency",
+        "desc": "Clear cooperation terms, understandable reports and open communication at every project stage."
+      },
+      "growth": {
+        "title": "Growth",
+        "desc": "We scale solutions together with your business growth — from startup to large enterprise."
+      },
+      "local": {
+        "title": "Local Expertise",
+        "desc": "Deep understanding of Ukrainian market specifics, legislation and business environment."
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Experienced specialists who understand your business",
+      "members": {
+        "ceo": { "name": "Oleksandr Marchenko", "role": "Founder & CEO" },
+        "cto": { "name": "Dmytro Koval", "role": "CTO" },
+        "lead": { "name": "Viktoriia Bondar", "role": "Lead Developer" },
+        "ba": { "name": "Serhii Ivanov", "role": "Business Analyst" }
+      }
+    },
+    "timeline": {
+      "title": "How We Grew",
+      "2018": "Company founded. First clients — small businesses in Kyiv.",
+      "2019": "Launch of CRM integration division. Partnership with Bitrix24.",
+      "2021": "Team expanded to 10 specialists. First large EDI projects.",
+      "2023": "Entry into AI automation market. Launch of our own chatbot platform.",
+      "2024": "50+ satisfied clients. 120+ completed projects."
+    }
+  },
+  "contacts": {
+    "pageTitle": "Contact Us",
+    "pageSubtitle": "Tell us about your project — we'll respond within one business day.",
+    "form": {
+      "title": "Send a Request",
+      "name": "Your Name",
+      "namePlaceholder": "John Smith",
+      "email": "Email",
+      "emailPlaceholder": "john@company.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+380 XX XXX XX XX",
+      "company": "Company",
+      "companyPlaceholder": "Your Company LLC",
+      "service": "Service of Interest",
+      "servicePlaceholder": "Select a service",
+      "services": {
+        "crm": "CRM/ERP Integrations",
+        "edi": "Document Workflow Automation",
+        "bots": "Chatbots & AI Assistants",
+        "custom": "Custom Software Development",
+        "web": "Web Applications",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Describe your project or question...",
+      "optional": "(optional)",
+      "submit": "Send Request",
+      "submitting": "Sending...",
+      "successTitle": "Request Received!",
+      "successMessage": "Thank you! We'll contact you within one business day.",
+      "errorMessage": "Something went wrong. Please try again or email us directly."
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Ukraine, Kyiv",
+      "email": "info@artlogic.com.ua",
+      "phone": "+38 (044) 000-00-00",
+      "hours": "Mon–Fri: 9:00–18:00"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "submissions": "Submissions",
+    "allSubmissions": "All Submissions",
+    "unreadSubmissions": "Unread",
+    "markRead": "Mark as Read",
+    "markUnread": "Unread",
+    "logout": "Logout",
+    "noSubmissions": "No submissions yet",
+    "login": {
+      "title": "Admin Login",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Login",
+      "error": "Invalid email or password"
+    },
+    "table": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "service": "Service",
+      "message": "Message",
+      "date": "Date",
+      "status": "Status",
+      "actions": "Actions",
+      "read": "Read",
+      "unread": "New",
+      "locale": "Language"
+    }
+  },
+  "footer": {
+    "tagline": "Automating business processes since 2018",
+    "services": "Services",
+    "company": "Company",
+    "about": "About",
+    "contacts": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "copyright": "© {year} ArtLogic. All rights reserved."
+  }
+}
