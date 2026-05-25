@@ -44,11 +44,12 @@ const config: Config = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         brand: {
-          bg: "#050510",
-          surface: "#0d0d1f",
-          "surface-2": "#13132a",
+          bg: "#07071a",
+          surface: "#0c0c20",
+          "surface-2": "#111128",
           purple: "#7c3aed",
           "purple-light": "#a78bfa",
+          "purple-dim": "#5b21b6",
           blue: "#2563eb",
           "blue-light": "#60a5fa",
           cyan: "#06b6d4",
@@ -121,6 +122,9 @@ const config: Config = {
           "50%": { transform: "translateY(50%)" },
           "100%": { transform: "translateY(-50%)" },
         },
+      },
+      fontFamily: {
+        sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

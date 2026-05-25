@@ -3,6 +3,8 @@ import { getMessages } from "next-intl/server";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { LenisProvider } from "@/components/providers/LenisProvider";
+import { PageBackground } from "@/components/ui/page-background";
 import type { Metadata } from "next";
 
 type Props = {
@@ -40,7 +42,12 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      {children}
+      <PageBackground />
+      <LenisProvider>
+        <div className="relative" style={{ zIndex: 1 }}>
+          {children}
+        </div>
+      </LenisProvider>
     </NextIntlClientProvider>
   );
 }
