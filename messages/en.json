@@ -7,22 +7,36 @@
     "getStarted": "Get a Consultation"
   },
   "hero": {
-    "badge": "IT from Trading Practitioners",
-    "title": "Automation from those",
-    "titleHighlight": "who know trading from the inside",
-    "subtitle": "10+ years in sales — now automating business processes for small and medium trading businesses in Ukraine. No templates — only individual solutions.",
+    "badge": "CRM & IT Solutions for Business",
+    "title": "CRM Systems & Automation",
+    "titleHighlight": "for Small & Medium Business",
+    "subtitle": "We build CRM systems, financial solutions and automate business processes. A personalized approach to every client — from task analysis to implementation and ongoing support.",
     "ctaPrimary": "Get a Consultation",
-    "ctaSecondary": "Our Services"
+    "ctaSecondary": "Our Services",
+    "trustClients": "Personalized approach",
+    "trustSupport": "24/7 Support"
   },
-  "stats": {
-    "clients": "Satisfied Clients",
-    "projects": "Completed Projects",
-    "years": "Years in Sales",
-    "uptime": "Solution Uptime"
+  "advantages": {
+    "crm": {
+      "title": "CRM Built for You",
+      "desc": "Not an off-the-shelf product with unnecessary features, but a system built around your actual sales processes and client workflows."
+    },
+    "finance": {
+      "title": "Financial Solutions",
+      "desc": "Accounting automation, revenue and expense analytics, payment system integrations — everything for transparent financial management."
+    },
+    "individual": {
+      "title": "Personalized Service",
+      "desc": "We work with each client personally. We study your business, find the most effective solution, and support you at every stage."
+    },
+    "tech": {
+      "title": "Modern Technologies",
+      "desc": "AI, cloud infrastructure, integrations with any service — we use cutting-edge tools to drive your competitive growth."
+    }
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Practical solutions for trading and distribution businesses",
+    "subtitle": "Comprehensive IT solutions for small and medium businesses",
     "crm": {
       "title": "CRM/ERP Integrations",
       "description": "Setup and integration of Bitrix24, SAP and other platforms tailored to your real business processes — without unnecessary features or overpaying."
@@ -47,56 +61,46 @@
   },
   "dashboard": {
     "title": "Your Business Under Control",
-    "subtitle": "Centralized management panel for all integrations and processes"
+    "subtitle": "A centralized dashboard to manage all your business processes and integrations"
   },
   "cta": {
-    "title": "Ready to reach the next level?",
-    "subtitle": "Get a free consultation. Together we'll find the right solution for your specific business — no fluff, no off-the-shelf products.",
+    "title": "Need a CRM or Process Automation?",
+    "subtitle": "Tell us about your challenge — we'll analyze your processes and propose a solution that truly works for your business. Free consultation.",
     "button": "Contact Us"
   },
   "about": {
     "pageTitle": "About ArtLogic",
-    "pageSubtitle": "An IT company that grew from trading",
+    "pageSubtitle": "From real business experience — to IT solutions that work",
     "story": {
       "title": "Our Story",
-      "p1": "ArtLogic is a young IT company born not from theory, but from practice. Our founder spent over 10 years in trading and reselling in Ukraine — and knows firsthand what it means to process orders manually, deal with warehouse chaos, use Excel instead of a CRM, and lose clients due to a lack of proper systems.",
-      "p2": "We built ArtLogic for entrepreneurs just like we once were: small and medium trading businesses that need real, not off-the-shelf solutions. We use AI and cutting-edge technologies — but always with an individual approach and a deep understanding of how your business actually works."
+      "p1": "ArtLogic grew out of real business. For over 10 years, our team worked in trading and distribution — and learned firsthand how much time and money are wasted on manual processes, lack of CRM, and disconnected accounting systems.",
+      "p2": "That's why we built an IT company that develops CRM systems, financial solutions, and automation specifically for small and medium businesses. We don't sell boxed products — we study your processes and create a solution that works exactly for you."
     },
     "values": {
       "title": "Why Choose Us",
       "reliability": {
-        "title": "Reliability",
-        "desc": "Your business can't stop. Our solutions run 24/7, and our support team is always available — no matter what."
+        "title": "Hands-on Experience",
+        "desc": "We've walked the path from manual accounting to full automation ourselves. We understand business needs not from textbooks, but from real experience managing sales and finances."
       },
       "clarity": {
-        "title": "We Understand Your Business",
-        "desc": "We come from trading ourselves. We know the specifics of small and medium Ukrainian trading businesses better than any outside consultant."
+        "title": "Personalized Approach",
+        "desc": "Every project starts with an analysis of your processes. We don't fit your business into a template — we create a solution tailored to you."
       },
       "growth": {
-        "title": "Individual Approach",
-        "desc": "No two companies are alike. We study your processes and build a system for you — not force you into a ready-made template."
+        "title": "Quality Service",
+        "desc": "We work with a limited number of clients at a time to give maximum attention to each one. Support and guidance — at every stage."
       },
       "local": {
-        "title": "Modern Technologies",
-        "desc": "We use AI, cloud solutions and leading tools — so your business stays efficient and competitive."
-      }
-    },
-    "team": {
-      "title": "Our Team",
-      "subtitle": "Practitioners who understand your business",
-      "members": {
-        "ceo": { "name": "Artem Semenov", "role": "Founder & CEO" },
-        "cto": { "name": "Dmytro Koval", "role": "CTO" },
-        "lead": { "name": "Viktoriia Bondar", "role": "Lead Developer" },
-        "ba": { "name": "Serhii Ivanov", "role": "Business Analyst" }
+        "title": "Modern Stack",
+        "desc": "AI, cloud solutions, payment system and service integrations — we use proven technologies to keep your business running reliably."
       }
     },
     "timeline": {
-      "title": "How We Grew",
-      "2022": "Company founded. First clients — trading and distribution businesses.",
-      "2023": "Launch of CRM integrations for wholesale companies. Partnership with Bitrix24 and other platforms.",
-      "2024": "Team expanded with experienced IT specialists. Launch of AI-powered automation solutions.",
-      "2025": "50+ satisfied clients across Ukraine. Deep specialization in the trading sector."
+      "title": "Our Journey",
+      "2016": "Started in trading and distribution. First experience managing sales, inventory and finances manually.",
+      "2019": "Business scaling. Realizing the need for automation — Excel and disconnected systems could no longer keep up.",
+      "2022": "Transition to IT. Building a development team to create CRM and financial solutions based on real business experience.",
+      "2025": "ArtLogic today — an IT company specializing in CRM systems, financial solutions and automation for small and medium businesses."
     }
   },
   "contacts": {
@@ -171,7 +175,7 @@
     }
   },
   "footer": {
-    "tagline": "IT from trading practitioners. Individual approach.",
+    "tagline": "CRM & IT solutions for small and medium businesses.",
     "services": "Services",
     "company": "Company",
     "about": "About",

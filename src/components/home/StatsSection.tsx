@@ -2,36 +2,30 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
+import { Monitor, DollarSign, UserCheck, Cpu } from "lucide-react";
 
 const SPRING = { ease: [0.16, 1, 0.3, 1] } as const;
 
-/* More organic, believable numbers */
-const stats = [
-  { key: "clients", value: 53, suffix: "+", prefix: "", isFloat: false },
-  { key: "projects", value: 127, suffix: "+", prefix: "", isFloat: false },
-  { key: "years", value: 8, suffix: "+", prefix: "", isFloat: false },
-  { key: "uptime", value: 997, suffix: "%", prefix: "", isFloat: true }, // displayed as 99.7
+const advantages = [
+  { key: "crm", icon: Monitor },
+  { key: "finance", icon: DollarSign },
+  { key: "individual", icon: UserCheck },
+  { key: "tech", icon: Cpu },
 ] as const;
 
-function StatCard({
-  value,
-  suffix,
-  label,
-  isFloat,
+function AdvantageCard({
+  icon: Icon,
+  title,
+  desc,
   delay,
 }: {
-  value: number;
-  suffix: string;
-  label: string;
-  isFloat?: boolean;
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  desc: string;
   delay: number;
 }) {
-  const { count, ref } = useAnimatedCounter(isFloat ? value : value, 1800);
-
   return (
     <motion.div
-      ref={ref as React.RefObject<HTMLDivElement>}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
@@ -43,37 +37,36 @@ function StatCard({
 
       {/* Inner */}
       <div
-        className="relative m-[1px] rounded-[calc(1rem-1px)] px-6 py-7 text-center transition-all duration-300 group-hover:bg-violet-500/[0.04]"
+        className="relative m-[1px] rounded-[calc(1rem-1px)] px-6 py-7 transition-all duration-300 group-hover:bg-violet-500/[0.04]"
         style={{
           background: "rgba(10, 10, 26, 0.6)",
           boxShadow: "inset 0 1px 1px rgba(255,255,255,0.06)",
           backdropFilter: "blur(16px)",
         }}
       >
-        <div className="text-4xl md:text-5xl font-extrabold mb-1.5 tracking-[-0.03em] text-white tabular-nums">
-          {isFloat ? (count / 10).toFixed(1) : count}
-          <span className="text-violet-400">{suffix}</span>
+        <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center mb-4">
+          <Icon className="w-5 h-5 text-violet-400" />
         </div>
-        <p className="text-white/35 text-sm font-medium">{label}</p>
+        <h3 className="text-white font-bold text-base mb-2">{title}</h3>
+        <p className="text-white/40 text-sm leading-relaxed">{desc}</p>
       </div>
     </motion.div>
   );
 }
 
 export function StatsSection() {
-  const t = useTranslations("stats");
+  const t = useTranslations("advantages");
 
   return (
     <section className="py-8 px-4 md:px-8 relative">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {stats.map((stat, i) => (
-            <StatCard
-              key={stat.key}
-              value={stat.value}
-              suffix={stat.suffix}
-              label={t(stat.key)}
-              isFloat={"isFloat" in stat && stat.isFloat}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+          {advantages.map((adv, i) => (
+            <AdvantageCard
+              key={adv.key}
+              icon={adv.icon}
+              title={t(`${adv.key}.title`)}
+              desc={t(`${adv.key}.desc`)}
               delay={i * 0.08}
             />
           ))}

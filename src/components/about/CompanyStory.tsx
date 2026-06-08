@@ -7,7 +7,7 @@ import { GradientText } from "@/components/shared/GradientText";
 export function CompanyStory() {
   const t = useTranslations("about");
 
-  const timelineYears = ["2022", "2023", "2024", "2025"] as const;
+  const timelineYears = ["2016", "2019", "2022", "2025"] as const;
 
   return (
     <section className="py-16 md:py-24 px-4 md:px-8">

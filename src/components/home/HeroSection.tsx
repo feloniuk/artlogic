@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { BackgroundPaths } from "@/components/ui/background-paths";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, UserCheck } from "lucide-react";
 
 const SplineScene = dynamic(
   () =>
@@ -144,30 +144,18 @@ export function HeroSection() {
               transition={{ delay: 0.65, duration: 0.6 }}
               className="flex items-center gap-6 pt-1"
             >
-              <div className="flex items-center gap-2.5">
-                <div className="flex -space-x-2">
-                  {[
-                    { initials: "OM", bg: "bg-violet-700" },
-                    { initials: "DK", bg: "bg-indigo-700" },
-                    { initials: "VB", bg: "bg-violet-800" },
-                  ].map(({ initials, bg }, i) => (
-                    <div
-                      key={initials}
-                      className={`w-7 h-7 rounded-full ${bg} border-2 border-brand-bg flex items-center justify-center text-[9px] font-bold text-white`}
-                      style={{ zIndex: 3 - i }}
-                    >
-                      {initials}
-                    </div>
-                  ))}
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full bg-violet-700 border-2 border-brand-bg flex items-center justify-center">
+                  <UserCheck className="w-3.5 h-3.5 text-white" />
                 </div>
-                <span className="text-white/35 text-xs font-medium">50+ клієнтів</span>
+                <span className="text-white/35 text-xs font-medium">{t("trustClients")}</span>
               </div>
 
               <div className="w-px h-3 bg-white/10" />
 
               <div className="flex items-center gap-1.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span className="text-white/35 text-xs font-medium">99.7% uptime</span>
+                <span className="text-white/35 text-xs font-medium">{t("trustSupport")}</span>
               </div>
             </motion.div>
           </motion.div>

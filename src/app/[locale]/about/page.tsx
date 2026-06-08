@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CompanyStory } from "@/components/about/CompanyStory";
 import { ValuesSection } from "@/components/about/ValuesSection";
-import { TeamGrid } from "@/components/about/TeamGrid";
+
 import { CtaSection } from "@/components/home/CtaSection";
 import { GradientText } from "@/components/shared/GradientText";
 
@@ -45,7 +45,6 @@ export default async function AboutPage({ params }: Props) {
 
         <CompanyStory />
         <ValuesSection />
-        <TeamGrid />
         <CtaSection />
       </main>
       <Footer />

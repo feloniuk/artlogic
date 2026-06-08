@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -14,7 +14,7 @@ model ContactSubmission {
   phone     String?
   company   String?
   service   String?
-  message   String
+  message   String   @db.Text
   isRead    Boolean  @default(false)
   locale    String   @default("uk")
   createdAt DateTime @default(now())
