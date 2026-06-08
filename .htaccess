@@ -1,9 +1,3 @@
-RewriteEngine On
-
-# Proxy all requests to Next.js (Node.js on port 3000)
-RewriteCond %{REQUEST_URI} !^/\.well-known/
-RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P,L]
-
-# Proxy headers
-RequestHeader set X-Forwarded-Proto "https"
-RequestHeader set X-Forwarded-Host "%{HTTP_HOST}e"
+PassengerAppRoot /home/felon007/artlogic.com.ua
+PassengerAppType node
+PassengerStartupFile app.js
