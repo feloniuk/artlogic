@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "services": "Services",
+    "projects": "Our Products",
     "about": "About",
     "contacts": "Contact",
     "getStarted": "Get a Consultation"
@@ -62,6 +63,59 @@
   "dashboard": {
     "title": "Your Business Under Control",
     "subtitle": "A centralized dashboard to manage all your business processes and integrations"
+  },
+  "projects": {
+    "pageTitle": "Our Products",
+    "pageSubtitle": "We don't just consult — we build and run our own CRM solutions for e-commerce businesses in Ukraine. FinCRM is our own product, built from an internal accounting tool into a full SaaS platform.",
+    "intro": {
+      "title": "From Our Own Experience to a Finished Product",
+      "text": "FinCRM grew out of a real need: online store owners on Horoshop and Prom.ua lose hours every day to manual invoicing, stock reconciliation, and customer communication. We built a solution that automates the entire cycle — from order to payment — and today offer it in two formats: as a custom implementation and as a ready-to-use SaaS subscription."
+    },
+    "fincrm": {
+      "badge": "Flagship Product",
+      "title": "FinCRM — CRM for E-commerce Businesses",
+      "description": "A command center for orders, documents, and finances for online stores. It brings together orders from multiple sales channels, automatically issues invoices and delivery notes, tracks inventory, and communicates with customers — no manual routine.",
+      "stack": "Available in two editions: as a custom implementation (Laravel) for a single company, or as a multi-tenant SaaS platform (Next.js) for teams and multiple legal entities.",
+      "features": {
+        "orders": {
+          "title": "Order Management",
+          "desc": "Automatic order sync from Horoshop and Prom.ua via API and webhooks. A full lifecycle — new, processing, invoiced, shipped, delivered, paid — with no switching between store tabs."
+        },
+        "invoicing": {
+          "title": "Invoices & Delivery Notes in One Click",
+          "desc": "Automatic generation of invoices and delivery notes in PDF and Excel, VAT calculation, line-item or order-level discounts, amounts spelled out in words — accounting-ready documents in seconds."
+        },
+        "warehouse": {
+          "title": "Inventory Management",
+          "desc": "Stock tracking per product and warehouse, full movement history (sales, restocks, adjustments), low-stock alerts — always know what's actually in stock."
+        },
+        "companies": {
+          "title": "Multiple Legal Entities in One Account",
+          "desc": "Manage several sole proprietorships or LLCs at once: separate tax regimes, simplified-tax turnover limit tracking, individual business details and API keys per company."
+        },
+        "delivery": {
+          "title": "Nova Poshta Integration",
+          "desc": "Generate shipping labels — including in bulk — directly from the order card, with automatic delivery status tracking and an up-to-date directory of cities and branches."
+        },
+        "messaging": {
+          "title": "SMS & Viber Broadcasts",
+          "desc": "Automatic order-status notifications and bulk marketing campaigns via cascading Viber-to-SMS delivery, with message templates and delivery statistics."
+        },
+        "ai": {
+          "title": "AI-Generated Product Descriptions",
+          "desc": "Automatic generation of SEO titles, descriptions, and keywords for product listings in Ukrainian and Russian using AI — published straight back to the store."
+        },
+        "finance": {
+          "title": "Financial Accounting",
+          "desc": "Cash, card, and bank accounts in one place: income and expenses tracked by category (shipping, advertising, payroll, rent, supplies) for a real picture of your cash flow."
+        }
+      },
+      "saas": {
+        "title": "SaaS Edition for Teams",
+        "text": "A multi-tenant platform with role-based access (owner, manager, viewer), onboarding for new users, subscription plans with a trial period, and payments via Monobank Acquiring. Each company operates in its own isolated workspace, and the business owner can invite a team and control access rights."
+      },
+      "cta": "Want a solution like this for your own business?"
+    }
   },
   "cta": {
     "title": "Need a CRM or Process Automation?",
@@ -178,6 +232,7 @@
     "tagline": "CRM & IT solutions for small and medium businesses.",
     "services": "Services",
     "company": "Company",
+    "projects": "Our Products",
     "about": "About",
     "contacts": "Contact",
     "legal": "Legal",
