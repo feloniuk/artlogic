@@ -4,9 +4,6 @@ set -euo pipefail
 APP_ROOT="/home/felon007/artlogic.com.ua"
 cd "$APP_ROOT"
 
-echo "==> Pulling latest changes"
-git pull origin main
-
 echo "==> Installing dependencies"
 npm install
 
