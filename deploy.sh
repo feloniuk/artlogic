@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_ROOT="/home/felon007/artlogic.com.ua"
+APP_ROOT="$HOME/artlogic.com.ua"
+APP_NAME="artlogic"
+APP_PORT=3001
 cd "$APP_ROOT"
 
 echo "==> Installing dependencies"
@@ -14,16 +16,14 @@ echo "==> Building project"
 npm run build
 
 echo "==> Setting permissions"
-find "$APP_ROOT" \
-  \( -path "$APP_ROOT/node_modules" -o -path "$APP_ROOT/.git" -o -path "$APP_ROOT/.next" \) -prune \
-  -o -type d -print0 | xargs -0 --no-run-if-empty chmod 755
-find "$APP_ROOT" \
-  \( -path "$APP_ROOT/node_modules" -o -path "$APP_ROOT/.git" -o -path "$APP_ROOT/.next" \) -prune \
-  -o -type f -print0 | xargs -0 --no-run-if-empty chmod 644
-chmod 644 app.js
 chmod 600 .env
 
-mkdir -p tmp
-touch tmp/restart.txt
+echo "==> (Re)starting app on 127.0.0.1:$APP_PORT"
+if npx pm2 describe "$APP_NAME" > /dev/null 2>&1; then
+  PORT=$APP_PORT NODE_ENV=production npx pm2 restart "$APP_NAME" --update-env
+else
+  PORT=$APP_PORT NODE_ENV=production npx pm2 start app.js --name "$APP_NAME"
+fi
+npx pm2 save
 
-echo "==> Deploy finished, Passenger will restart the app"
+echo "==> Deploy finished"

@@ -1,0 +1,16 @@
+# Кладётся в ~/public_html/artlogic.com.ua/.htaccess (DocumentRoot addon-домена).
+# Проксирует все запросы artlogic.com.ua на Node-процесс 127.0.0.1:3001
+# (CRM занимает 3000). Корневой public_html/.htaccess при этом не трогаем.
+DirectoryIndex disabled
+
+RewriteEngine On
+
+# Принудительный HTTPS (ACME-challenge не трогаем — нужен AutoSSL)
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteRule ^ http://127.0.0.1:3001%{REQUEST_URI} [P,L]
+
+RequestHeader set X-Forwarded-Proto "https"
