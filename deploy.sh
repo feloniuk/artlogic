@@ -33,12 +33,37 @@ npm run build
 echo "==> Setting permissions"
 chmod 600 .env
 
-echo "==> (Re)starting app on 127.0.0.1:$APP_PORT"
-if npx pm2 describe "$APP_NAME" > /dev/null 2>&1; then
-  PORT=$APP_PORT NODE_ENV=production npx pm2 restart "$APP_NAME" --update-env
-else
-  PORT=$APP_PORT NODE_ENV=production npx pm2 start app.js --name "$APP_NAME" --interpreter "$NODE_BIN"
+if ! command -v pm2 > /dev/null; then
+  echo "==> Installing pm2"
+  npm install -g pm2
 fi
-npx pm2 save
+
+echo "==> (Re)starting app on 127.0.0.1:$APP_PORT"
+if pm2 describe "$APP_NAME" > /dev/null 2>&1; then
+  PORT=$APP_PORT NODE_ENV=production pm2 restart "$APP_NAME" --update-env
+else
+  PORT=$APP_PORT NODE_ENV=production pm2 start app.js --name "$APP_NAME" --interpreter "$NODE_BIN"
+fi
+pm2 save
+
+# Поднимаем pm2 (и artlogic) после перезагрузки сервера
+CRON_LINE="@reboot . \$HOME/.nvm/nvm.sh && pm2 resurrect"
+if ! crontab -l 2>/dev/null | grep -qF "pm2 resurrect"; then
+  (crontab -l 2>/dev/null; echo "$CRON_LINE") | crontab -
+  echo "==> Added @reboot pm2 resurrect to crontab"
+fi
+
+for _ in $(seq 1 15); do
+  if curl -sfI "http://127.0.0.1:$APP_PORT/" > /dev/null; then
+    echo "==> App responds on 127.0.0.1:$APP_PORT"
+    break
+  fi
+  sleep 1
+done
+if ! curl -sfI "http://127.0.0.1:$APP_PORT/" > /dev/null; then
+  echo "==> App is NOT responding, last logs:" >&2
+  pm2 logs "$APP_NAME" --lines 40 --nostream
+  exit 1
+fi
 
 echo "==> Deploy finished"
