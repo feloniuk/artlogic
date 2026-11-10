@@ -5,10 +5,7 @@ import {
   AnimatePresence,
   motion,
   useInView,
-  useMotionValue,
   useReducedMotion,
-  useSpring,
-  useTransform,
 } from "framer-motion";
 import { useTranslations } from "next-intl";
 import {
@@ -167,27 +164,8 @@ export function AutomationFlow() {
     };
   }, [cycle, running]);
 
-  const geo = useMemo(() => (size ? buildGeometry(size.w, size.h) : null), [size]);
+  const geo = useMemo(() => (size && size.w > 240 && size.h > 0 ? buildGeometry(size.w, size.h) : null), [size]);
   const order = orderAt(cycle);
-
-  // Subtle pointer tilt
-  const px = useMotionValue(0);
-  const py = useMotionValue(0);
-  const sx = useSpring(px, { stiffness: 120, damping: 20 });
-  const sy = useSpring(py, { stiffness: 120, damping: 20 });
-  const rotateY = useTransform(sx, [-0.5, 0.5], [-5, 5]);
-  const rotateX = useTransform(sy, [-0.5, 0.5], [4, -4]);
-
-  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (e.pointerType !== "mouse" || reducedMotion) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    px.set((e.clientX - rect.left) / rect.width - 0.5);
-    py.set((e.clientY - rect.top) / rect.height - 0.5);
-  };
-  const handlePointerLeave = () => {
-    px.set(0);
-    py.set(0);
-  };
 
   const stats = [
     { key: "orders", value: BASE_STATS.orders + completed },
@@ -201,17 +179,11 @@ export function AutomationFlow() {
       role="img"
       aria-label={t("aria")}
       className="relative"
-      style={{ perspective: 1400 }}
-      onPointerMove={handlePointerMove}
-      onPointerLeave={handlePointerLeave}
     >
       {/* Ambient glow */}
       <div className="absolute inset-6 -z-10 rounded-[2rem] bg-violet-600/15 blur-3xl" />
 
-      <motion.div
-        style={{ rotateX, rotateY }}
-        className="relative rounded-[2rem] border border-white/[0.07] bg-white/[0.03] p-1.5"
-      >
+      <div className="relative rounded-[2rem] border border-white/[0.07] bg-white/[0.03] p-1.5">
         <div
           className="relative overflow-hidden rounded-[calc(2rem-6px)] bg-brand-surface"
           style={{ boxShadow: "inset 0 1px 1px rgba(255,255,255,0.08)" }}
@@ -267,14 +239,14 @@ export function AutomationFlow() {
                     </linearGradient>
                   </defs>
 
-                  {[...geo.inPaths, ...geo.outPaths].map((d) => (
-                    <path key={d} d={d} stroke="rgba(255,255,255,0.09)" strokeWidth={1} />
+                  {[...geo.inPaths, ...geo.outPaths].map((d, i) => (
+                    <path key={i} d={d} stroke="rgba(255,255,255,0.09)" strokeWidth={1} />
                   ))}
-                  {geo.srcY.map((y) => (
-                    <circle key={`s${y}`} cx={geo.srcEdge} cy={y} r={2.5} fill="#8b5cf6" fillOpacity={0.6} />
+                  {geo.srcY.map((y, i) => (
+                    <circle key={i} cx={geo.srcEdge} cy={y} r={2.5} fill="#8b5cf6" fillOpacity={0.6} />
                   ))}
-                  {geo.outY.map((y) => (
-                    <circle key={`o${y}`} cx={geo.outEdge} cy={y} r={2.5} fill="#22d3ee" fillOpacity={0.5} />
+                  {geo.outY.map((y, i) => (
+                    <circle key={i} cx={geo.outEdge} cy={y} r={2.5} fill="#22d3ee" fillOpacity={0.5} />
                   ))}
 
                   {/* Orbit rings around the core */}
@@ -285,8 +257,6 @@ export function AutomationFlow() {
                     stroke="rgba(167,139,250,0.28)"
                     strokeWidth={1}
                     strokeDasharray="2 7"
-                    className="animate-[spin_24s_linear_infinite] motion-reduce:animate-none"
-                    style={{ transformBox: "fill-box", transformOrigin: "center" }}
                   />
                   <circle
                     cx={geo.cx}
@@ -295,8 +265,6 @@ export function AutomationFlow() {
                     stroke="rgba(255,255,255,0.08)"
                     strokeWidth={1}
                     strokeDasharray="1 11"
-                    className="animate-[spin_40s_linear_infinite_reverse] motion-reduce:animate-none"
-                    style={{ transformBox: "fill-box", transformOrigin: "center" }}
                   />
 
                   {running && (
@@ -304,7 +272,7 @@ export function AutomationFlow() {
                       <LitWire d={geo.inPaths[order.source]} delay={0} duration={IN_S} />
                       {geo.outPaths.map((d, j) => (
                         <LitWire
-                          key={d}
+                          key={j}
                           d={d}
                           delay={OUT_START_S + j * OUT_STAGGER_S}
                           duration={OUT_S}
@@ -427,7 +395,7 @@ export function AutomationFlow() {
                     <Packet d={geo.inPaths[order.source]} delay={0} duration={IN_S} />
                     {geo.outPaths.map((d, j) => (
                       <Packet
-                        key={d}
+                        key={j}
                         d={d}
                         delay={OUT_START_S + j * OUT_STAGGER_S}
                         duration={OUT_S}
@@ -494,7 +462,7 @@ export function AutomationFlow() {
             ))}
           </dl>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
