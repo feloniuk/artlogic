@@ -15,9 +15,58 @@
     "ctaPrimary": "Get a Consultation",
     "ctaSecondary": "Our Services",
     "trustClients": "Personalized approach",
-    "trustSupport": "24/7 Support"
+    "trustSupport": "24/7 Support",
+    "flow": {
+      "aria": "Diagram: an order from Horoshop, Prom.ua or the API flows through CRM Finance automatically — invoice, waybill, customer notification and bookkeeping",
+      "live": "Order is processed automatically",
+      "orderLabel": "Order",
+      "steps": "invoice · waybill · SMS · books",
+      "caption": "This is how CRM Finance, our own product, works",
+      "out": {
+        "invoice": { "label": "Invoice", "sub": "PDF · VAT" },
+        "ttn": { "label": "Waybill", "sub": "Nova Poshta" },
+        "notify": { "label": "Notification", "sub": "Viber → SMS" },
+        "finance": { "label": "Bookkeeping", "sub": "Cash · bank" }
+      },
+      "stats": {
+        "orders": "Orders",
+        "invoices": "Invoices",
+        "ttn": "Waybills"
+      }
+    }
+  },
+  "fincrmHome": {
+    "eyebrow": "ArtLogic's own product",
+    "title": "CRM Finance — your online store's back office",
+    "titleHighlight": "on autopilot",
+    "text": "We don't just implement other people's systems — we built our own. CRM Finance pulls orders from Horoshop and Prom.ua into a single queue, issues invoices, creates Nova Poshta waybills, notifies customers and keeps the books. We bring that same experience to every custom project.",
+    "facts": {
+      "integrations": { "value": "6+", "label": "ready-made integrations out of the box" },
+      "start": { "value": "5 min", "label": "from sign-up to a working account" },
+      "trial": { "value": "14 days", "label": "free, no card required" }
+    },
+    "integrationsLabel": "Integrations",
+    "ctaTry": "Try it free",
+    "ctaMore": "More about the product",
+    "mock": {
+      "revenue": "Revenue this month",
+      "orders": "Orders",
+      "ttn": "Active waybills",
+      "invoices": "Invoices this week",
+      "queue": "Order queue",
+      "allSources": "All marketplaces",
+      "status": {
+        "paid": "Paid",
+        "shipped": "Shipped",
+        "invoice": "Invoiced",
+        "new": "New"
+      }
+    }
   },
   "advantages": {
+    "eyebrow": "Our approach",
+    "title": "Why clients choose",
+    "titleHighlight": "us",
     "crm": {
       "title": "CRM Built for You",
       "desc": "Not an off-the-shelf product with unnecessary features, but a system built around your actual sales processes and client workflows."
@@ -66,14 +115,14 @@
   },
   "projects": {
     "pageTitle": "Our Products",
-    "pageSubtitle": "We don't just consult — we build and run our own CRM solutions for e-commerce businesses in Ukraine. FinCRM is our own product, built from an internal accounting tool into a full SaaS platform.",
+    "pageSubtitle": "We don't just consult — we build and run our own CRM solutions for e-commerce businesses in Ukraine. CRM Finance is our own product, built from an internal accounting tool into a full SaaS platform.",
     "intro": {
       "title": "From Our Own Experience to a Finished Product",
-      "text": "FinCRM grew out of a real need: online store owners on Horoshop and Prom.ua lose hours every day to manual invoicing, stock reconciliation, and customer communication. We built a solution that automates the entire cycle — from order to payment — and today offer it in two formats: as a custom implementation and as a ready-to-use SaaS subscription."
+      "text": "CRM Finance grew out of a real need: online store owners on Horoshop and Prom.ua lose hours every day to manual invoicing, stock reconciliation, and customer communication. We built a solution that automates the entire cycle — from order to payment — and today offer it in two formats: as a custom implementation and as a ready-to-use SaaS subscription."
     },
     "fincrm": {
       "badge": "Flagship Product",
-      "title": "FinCRM — CRM for E-commerce Businesses",
+      "title": "CRM Finance — CRM for E-commerce Businesses",
       "description": "A command center for orders, documents, and finances for online stores. It brings together orders from multiple sales channels, automatically issues invoices and delivery notes, tracks inventory, and communicates with customers — no manual routine.",
       "stack": "Available in two editions: as a custom implementation (Laravel) for a single company, or as a multi-tenant SaaS platform (Next.js) for teams and multiple legal entities.",
       "features": {

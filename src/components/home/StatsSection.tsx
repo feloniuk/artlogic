@@ -13,62 +13,54 @@ const advantages = [
   { key: "tech", icon: Cpu },
 ] as const;
 
-function AdvantageCard({
-  icon: Icon,
-  title,
-  desc,
-  delay,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  desc: string;
-  delay: number;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ delay, duration: 0.7, ...SPRING }}
-      className="group relative"
-    >
-      {/* Outer bezel */}
-      <div className="absolute inset-0 rounded-2xl bg-white/[0.025] border border-white/[0.07]" />
-
-      {/* Inner */}
-      <div
-        className="relative m-[1px] rounded-[calc(1rem-1px)] px-6 py-7 transition-all duration-300 group-hover:bg-violet-500/[0.04]"
-        style={{
-          background: "rgba(10, 10, 26, 0.6)",
-          boxShadow: "inset 0 1px 1px rgba(255,255,255,0.06)",
-          backdropFilter: "blur(16px)",
-        }}
-      >
-        <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center mb-4">
-          <Icon className="w-5 h-5 text-violet-400" />
-        </div>
-        <h3 className="text-white font-bold text-base mb-2">{title}</h3>
-        <p className="text-white/40 text-sm leading-relaxed">{desc}</p>
-      </div>
-    </motion.div>
-  );
-}
-
 export function StatsSection() {
   const t = useTranslations("advantages");
 
   return (
-    <section className="py-8 px-4 md:px-8 relative">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+    <section className="relative px-4 py-24 md:px-8 md:py-32">
+      <div className="mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ...SPRING }}
+          className="mb-12 md:mb-16"
+        >
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white/40">
+            {t("eyebrow")}
+          </span>
+          <h2 className="max-w-xl text-3xl font-extrabold leading-tight tracking-[-0.02em] text-white md:text-5xl">
+            {t("title")} <span className="text-violet-400">{t("titleHighlight")}</span>
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 border-t border-white/[0.08] sm:grid-cols-2 lg:grid-cols-4">
           {advantages.map((adv, i) => (
-            <AdvantageCard
+            <motion.div
               key={adv.key}
-              icon={adv.icon}
-              title={t(`${adv.key}.title`)}
-              desc={t(`${adv.key}.desc`)}
-              delay={i * 0.08}
-            />
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ delay: i * 0.08, duration: 0.7, ...SPRING }}
+              className={`group relative border-b border-white/[0.08] py-8 sm:px-7 lg:border-b-0 lg:py-10 ${
+                i % 2 === 0 ? "sm:pl-0" : "sm:border-l"
+              } ${i === 0 ? "lg:pl-0" : "lg:border-l lg:pl-7"}`}
+            >
+              {/* Accent line that grows on hover */}
+              <span className="absolute left-0 top-[-1px] h-px w-0 bg-violet-400 transition-all duration-500 ease-out group-hover:w-full" />
+
+              <div className="mb-8 flex items-center justify-between">
+                <span className="font-mono text-xs text-violet-400/80">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <adv.icon
+                  className="h-5 w-5 text-white/25 transition-colors duration-300 group-hover:text-violet-300"
+                  strokeWidth={1.5}
+                />
+              </div>
+              <h3 className="mb-3 text-lg font-bold leading-snug text-white">{t(`${adv.key}.title`)}</h3>
+              <p className="text-sm leading-relaxed text-white/45">{t(`${adv.key}.desc`)}</p>
+            </motion.div>
           ))}
         </div>
       </div>

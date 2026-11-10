@@ -49,7 +49,7 @@ const serviceConfig = [
   {
     key: "web",
     icon: Globe,
-    colSpan: "md:col-span-2",
+    colSpan: "",
     accent: "text-violet-400",
     glow: "violet",
     featured: false,
@@ -57,22 +57,20 @@ const serviceConfig = [
 ] as const;
 
 function ServiceCard({
-  serviceKey,
+  index,
   icon: Icon,
   colSpan,
   accent,
-  glow,
   featured,
   title,
   description,
   learnMore,
   delay,
 }: {
-  serviceKey: string;
+  index: string;
   icon: React.ElementType;
   colSpan: string;
   accent: string;
-  glow: string;
   featured: boolean;
   title: string;
   description: string;
@@ -99,7 +97,7 @@ function ServiceCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ delay, duration: 0.7, ...SPRING }}
-      className={`group relative rounded-3xl overflow-hidden cursor-pointer ${colSpan}`}
+      className={`group relative rounded-3xl overflow-hidden ${colSpan}`}
     >
       {/* Outer bezel */}
       <div className="absolute inset-0 rounded-3xl bg-white/[0.025] border border-white/[0.07]" />
@@ -129,10 +127,13 @@ function ServiceCard({
 
         <div className={`relative p-7 ${featured ? "md:p-10" : ""} flex flex-col h-full min-h-[180px]`}>
           {/* Icon */}
-          <div className="mb-5">
+          <div className="mb-5 flex items-start justify-between">
             <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center transition-all duration-300 group-hover:bg-violet-500/15 group-hover:border-violet-500/30">
               <Icon className={`w-5 h-5 ${accent}`} strokeWidth={1.5} />
             </div>
+            <span className="font-mono text-xs text-white/20 transition-colors duration-300 group-hover:text-violet-400/70">
+              {index}
+            </span>
           </div>
 
           <h3 className={`text-white font-semibold mb-2 leading-snug ${featured ? "text-xl md:text-2xl" : "text-base"}`}>
@@ -161,7 +162,7 @@ export function ServicesSection() {
   const t = useTranslations("services");
 
   return (
-    <SectionWrapper id="services" className="snap-section min-h-[100dvh] flex flex-col justify-center">
+    <SectionWrapper id="services" className="snap-section">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -190,11 +191,10 @@ export function ServicesSection() {
         {serviceConfig.map((service, i) => (
           <ServiceCard
             key={service.key}
-            serviceKey={service.key}
+            index={String(i + 1).padStart(2, "0")}
             icon={service.icon}
             colSpan={service.colSpan}
             accent={service.accent}
-            glow={service.glow}
             featured={service.featured}
             title={t(`${service.key}.title`)}
             description={t(`${service.key}.description`)}

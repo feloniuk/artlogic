@@ -64,16 +64,16 @@ export function Header() {
           </Link>
 
           {/* Divider */}
-          <div className="w-px h-4 bg-white/10 hidden md:block mx-1" />
+          <div className="w-px h-4 bg-white/10 hidden lg:block mx-1" />
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center">
+          <nav className="hidden lg:flex items-center">
             {navLinks.map(({ href, key }) => (
               <Link
                 key={key}
                 href={href}
                 className={cn(
-                  "relative px-3 py-1.5 text-sm font-medium rounded-full transition-all duration-200",
+                  "relative px-3 py-1.5 text-sm font-medium rounded-full whitespace-nowrap transition-all duration-200",
                   pathname === href
                     ? "text-white bg-white/10"
                     : "text-white/50 hover:text-white hover:bg-white/5"
@@ -85,14 +85,14 @@ export function Header() {
           </nav>
 
           {/* Divider */}
-          <div className="w-px h-4 bg-white/10 hidden md:block mx-1" />
+          <div className="w-px h-4 bg-white/10 hidden lg:block mx-1" />
 
           {/* Right side */}
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2">
             <LocaleSwitcher />
             <Link
               href="/contacts"
-              className="px-4 py-1.5 text-sm font-semibold rounded-full bg-violet-600 hover:bg-violet-500 text-white transition-all duration-200 active:scale-[0.97] shadow-lg shadow-violet-500/25"
+              className="px-4 py-1.5 text-sm font-semibold rounded-full whitespace-nowrap bg-violet-600 hover:bg-violet-500 text-white transition-all duration-200 active:scale-[0.97] shadow-lg shadow-violet-500/25"
               style={{ transition: "background-color 160ms ease-out, transform 100ms ease-out" }}
             >
               {t("getStarted")}
@@ -100,7 +100,7 @@ export function Header() {
           </div>
 
           {/* Mobile: locale + hamburger */}
-          <div className="flex md:hidden items-center gap-2 ml-1">
+          <div className="flex lg:hidden items-center gap-2 ml-1">
             <LocaleSwitcher />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -138,7 +138,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-40 lg:hidden"
           >
             {/* Backdrop blur */}
             <div className="absolute inset-0 bg-black/85 backdrop-blur-3xl" />

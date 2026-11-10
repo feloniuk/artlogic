@@ -44,7 +44,7 @@ Locale routing uses "as-needed" prefix strategy (Ukrainian has no prefix). Middl
 
 - **UI components** use class-variance-authority (CVA) for variants, `cn()` utility from `src/lib/utils.ts` for class merging (clsx + tailwind-merge)
 - **Forms** use react-hook-form + zod validation + @hookform/resolvers
-- **Animations** use Framer Motion with scroll-triggered reveals; Lenis for smooth scrolling; Spline for 3D hero
+- **Animations** use Framer Motion with scroll-triggered reveals; Lenis for smooth scrolling; the hero visual is a custom SVG/Framer Motion pipeline (`src/components/home/AutomationFlow.tsx`)
 - **Auth** is JWT-based with HTTP-only cookies, 8-hour expiry. Admin credentials come from env vars (`ADMIN_EMAIL`, `ADMIN_PASSWORD_HASH` via bcryptjs)
 
 ### Brand Theme (tailwind.config.ts)

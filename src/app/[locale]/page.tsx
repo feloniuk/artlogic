@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { StatsSection } from "@/components/home/StatsSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
-import { DashboardScroll } from "@/components/home/DashboardScroll";
+import { FinCrmSpotlight } from "@/components/home/FinCrmSpotlight";
 import { CtaSection } from "@/components/home/CtaSection";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -29,9 +29,9 @@ export default async function HomePage({ params }: Props) {
       <Header />
       <main>
         <HeroSection />
-        <StatsSection />
+        <FinCrmSpotlight />
         <ServicesSection />
-        <DashboardScroll />
+        <StatsSection />
         <CtaSection />
       </main>
       <Footer />

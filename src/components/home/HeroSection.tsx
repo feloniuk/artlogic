@@ -1,61 +1,19 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { BackgroundPaths } from "@/components/ui/background-paths";
-import { ArrowRight, ChevronDown, UserCheck } from "lucide-react";
-
-const SplineScene = dynamic(
-  () =>
-    import("@/components/ui/splite").then((mod) => ({ default: mod.SplineScene })),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="w-full h-full flex items-center justify-center">
-        <div className="w-48 h-48 rounded-full bg-violet-600/10 blur-3xl animate-pulse" />
-      </div>
-    ),
-  }
-);
+import { AutomationFlow } from "@/components/home/AutomationFlow";
+import { ArrowRight, ArrowUpRight, ChevronDown, UserCheck } from "lucide-react";
 
 const SPRING = { ease: [0.16, 1, 0.3, 1] } as const;
 
 export function HeroSection() {
   const t = useTranslations("hero");
-  const splineContainerRef = useRef<HTMLDivElement>(null);
-
-  const handleSectionMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLElement>) => {
-      if (!splineContainerRef.current) return;
-      const canvas = splineContainerRef.current.querySelector("canvas");
-      if (!canvas || e.target === canvas) return;
-      canvas.dispatchEvent(
-        new PointerEvent("pointermove", {
-          bubbles: false,
-          cancelable: true,
-          clientX: e.clientX,
-          clientY: e.clientY,
-          screenX: e.screenX,
-          screenY: e.screenY,
-          movementX: e.movementX,
-          movementY: e.movementY,
-          pointerId: 1,
-          pointerType: "mouse",
-          isPrimary: true,
-        })
-      );
-    },
-    []
-  );
 
   return (
-    <section
-      className="relative min-h-[100dvh] flex items-center overflow-hidden snap-section"
-      onMouseMove={handleSectionMouseMove}
-    >
+    <section className="relative min-h-[100dvh] flex items-center overflow-hidden snap-section">
       <BackgroundPaths />
 
       {/* Ambient glow orbs */}
@@ -63,7 +21,7 @@ export function HeroSection() {
       <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-indigo-600/6 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full pt-28 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[75vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[75vh]">
 
           {/* Left content */}
           <motion.div
@@ -89,7 +47,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25, duration: 0.8, ...SPRING }}
-              className="text-[2.6rem] md:text-[3.5rem] lg:text-[4.2rem] font-extrabold leading-[1.06] tracking-[-0.025em] text-white text-balance"
+              className="text-[2.6rem] md:text-[3.5rem] lg:text-[3.5rem] xl:text-[3.9rem] font-extrabold leading-[1.06] tracking-[-0.025em] text-white text-balance"
             >
               {t("title")}
               <br />
@@ -160,31 +118,22 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right — Spline 3D in double-bezel */}
+          {/* Right — live automation pipeline */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.93 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.95, y: 24 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1.0, ...SPRING }}
-            className="relative h-[380px] md:h-[480px] lg:h-[560px]"
+            className="relative w-full max-w-[600px] mx-auto lg:mx-0 lg:justify-self-end"
           >
-            {/* Outer bezel */}
-            <div className="absolute inset-0 rounded-[2rem] bg-white/[0.03] border border-white/[0.06] p-1.5">
-              {/* Inner core */}
-              <div className="relative w-full h-full rounded-[calc(2rem-6px)] overflow-hidden bg-brand-surface" style={{ boxShadow: "inset 0 1px 1px rgba(255,255,255,0.08)" }}>
-                <div ref={splineContainerRef} className="absolute inset-0">
-                  <SplineScene
-                    scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                    className="w-full h-full"
-                  />
-                </div>
-              </div>
-            </div>
+            <AutomationFlow />
 
-            {/* Bottom fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-brand-bg to-transparent pointer-events-none rounded-b-[2rem]" />
-
-            {/* Ambient glow behind bezel */}
-            <div className="absolute inset-4 bg-violet-600/8 rounded-[2rem] blur-2xl -z-10" />
+            <Link
+              href="/projects"
+              className="group mt-5 flex items-center justify-center gap-1.5 text-xs font-medium text-white/40 transition-colors duration-200 hover:text-white lg:justify-end"
+            >
+              {t("flow.caption")}
+              <ArrowUpRight className="h-3.5 w-3.5 text-violet-400 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </Link>
           </motion.div>
         </div>
       </div>
@@ -194,7 +143,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1"
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}
