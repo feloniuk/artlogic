@@ -22,6 +22,7 @@
       "orderLabel": "Order",
       "steps": "invoice · waybill · SMS · books",
       "caption": "This is how CRM Finance, our own product, works",
+      "trial": "Try it free for 14 days",
       "out": {
         "invoice": { "label": "Invoice", "sub": "PDF · VAT" },
         "ttn": { "label": "Waybill", "sub": "Nova Poshta" },

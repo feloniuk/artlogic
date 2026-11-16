@@ -8,6 +8,7 @@ import { AutomationFlow } from "@/components/home/AutomationFlow";
 import { ArrowRight, ArrowUpRight, ChevronDown, UserCheck } from "lucide-react";
 
 const SPRING = { ease: [0.16, 1, 0.3, 1] } as const;
+const FINCRM_URL = "https://crm-finance.com.ua/";
 
 export function HeroSection() {
   const t = useTranslations("hero");
@@ -127,13 +128,25 @@ export function HeroSection() {
           >
             <AutomationFlow />
 
-            <Link
-              href="/projects"
-              className="group mt-5 flex items-center justify-center gap-1.5 text-xs font-medium text-white/40 transition-colors duration-200 hover:text-white lg:justify-end"
-            >
-              {t("flow.caption")}
-              <ArrowUpRight className="h-3.5 w-3.5 text-violet-400 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </Link>
+            {/* Caption + quiet direct link to the product's free trial */}
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs font-medium lg:justify-end">
+              <Link
+                href="/projects"
+                className="text-white/40 transition-colors duration-200 hover:text-white"
+              >
+                {t("flow.caption")}
+              </Link>
+              <span aria-hidden className="hidden h-3 w-px bg-white/10 sm:block" />
+              <a
+                href={FINCRM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1 text-violet-300/80 underline decoration-violet-400/30 underline-offset-4 transition-colors duration-200 hover:text-violet-200 hover:decoration-violet-300/70"
+              >
+                {t("flow.trial")}
+                <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
