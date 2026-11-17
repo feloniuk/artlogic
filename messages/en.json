@@ -289,5 +289,12 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "copyright": "© {year} ArtLogic. All rights reserved."
+  },
+  "cookies": {
+    "title": "We use cookies",
+    "text": "Essential cookies keep the site working — your language and account sign-in. Optional ones help us understand how to improve the site. You can accept all or keep only the essential ones.",
+    "textShort": "Essential ones keep the site working, optional ones help us improve it.",
+    "accept": "Accept all",
+    "essential": "Essential only"
   }
 }
