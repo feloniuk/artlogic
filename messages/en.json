@@ -5,7 +5,8 @@
     "projects": "Our Products",
     "about": "About",
     "contacts": "Contact",
-    "getStarted": "Get a Consultation"
+    "getStarted": "Get a Consultation",
+    "crm": "CRM Finance"
   },
   "hero": {
     "badge": "CRM & IT Solutions for Business",
@@ -16,6 +17,10 @@
     "ctaSecondary": "Our Services",
     "trustClients": "Personalized approach",
     "trustSupport": "24/7 Support",
+    "crmButton": {
+      "label": "Go to CRM Finance",
+      "sub": "Our product for online stores · 14 days free"
+    },
     "flow": {
       "aria": "Diagram: an order from Horoshop, Prom.ua or the API flows through CRM Finance automatically — invoice, waybill, customer notification and bookkeeping",
       "live": "Order is processed automatically",
@@ -107,8 +112,7 @@
     "web": {
       "title": "Web Applications",
       "description": "Development, refinement and scaling of web systems, business portals and personal account areas for your clients."
-    },
-    "learnMore": "Learn More"
+    }
   },
   "dashboard": {
     "title": "Your Business Under Control",
@@ -116,6 +120,7 @@
   },
   "projects": {
     "pageTitle": "Our Products",
+    "ctaSite": "Visit crm-finance.com.ua",
     "pageSubtitle": "We don't just consult — we build and run our own CRM solutions for e-commerce businesses in Ukraine. CRM Finance is our own product, built from an internal accounting tool into a full SaaS platform.",
     "intro": {
       "title": "From Our Own Experience to a Finished Product",
@@ -164,13 +169,15 @@
         "title": "SaaS Edition for Teams",
         "text": "A multi-tenant platform with role-based access (owner, manager, viewer), onboarding for new users, subscription plans with a trial period, and payments via Monobank Acquiring. Each company operates in its own isolated workspace, and the business owner can invite a team and control access rights."
       },
-      "cta": "Want a solution like this for your own business?"
+      "cta": "Want a solution like this for your own business?",
+      "ctaTrial": "Try it free for 14 days"
     }
   },
   "cta": {
     "title": "Need a CRM or Process Automation?",
     "subtitle": "Tell us about your challenge — we'll analyze your processes and propose a solution that truly works for your business. Free consultation.",
-    "button": "Contact Us"
+    "button": "Contact Us",
+    "crm": "Try CRM Finance"
   },
   "about": {
     "pageTitle": "About ArtLogic",
@@ -283,6 +290,7 @@
     "services": "Services",
     "company": "Company",
     "projects": "Our Products",
+    "crm": "CRM Finance",
     "about": "About",
     "contacts": "Contact",
     "legal": "Legal",

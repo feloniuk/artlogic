@@ -5,10 +5,10 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import { AutomationFlow } from "@/components/home/AutomationFlow";
+import { CRM_FINANCE_TRIAL_URL, CRM_FINANCE_URL } from "@/lib/links";
 import { ArrowRight, ArrowUpRight, ChevronDown, UserCheck } from "lucide-react";
 
 const SPRING = { ease: [0.16, 1, 0.3, 1] } as const;
-const FINCRM_URL = "https://crm-finance.com.ua/";
 
 export function HeroSection() {
   const t = useTranslations("hero");
@@ -66,33 +66,60 @@ export function HeroSection() {
               {t("subtitle")}
             </motion.p>
 
-            {/* CTAs */}
-            <motion.div
+            {/* Primary CTA — our product, CRM Finance */}
+            <motion.a
+              href={CRM_FINANCE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.7, ...SPRING }}
-              className="flex flex-col sm:flex-row gap-3 pt-1"
+              className="group relative flex w-full max-w-lg items-center gap-4 overflow-hidden rounded-2xl border border-violet-400/30 bg-gradient-to-r from-violet-600/25 via-violet-600/10 to-cyan-500/10 p-3 pr-4 shadow-xl shadow-violet-900/30 transition-[border-color,transform] duration-200 hover:border-violet-300/60 active:scale-[0.99] sm:p-4 sm:pr-5"
             >
-              {/* Primary CTA — nested icon architecture */}
+              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.07] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
+              <span
+                className="relative flex h-14 w-14 flex-shrink-0 flex-col items-center justify-center rounded-xl border border-violet-300/30"
+                style={{
+                  background: "linear-gradient(145deg, #8b5cf6 0%, #6d28d9 55%, #4c1d95 100%)",
+                  boxShadow: "0 8px 24px rgba(124,58,237,0.45), inset 0 1px 1px rgba(255,255,255,0.35)",
+                }}
+              >
+                <span className="text-[13px] font-extrabold leading-none text-white">CRM</span>
+                <span className="mt-1 text-[7px] font-bold leading-none tracking-[0.16em] text-white/75">FINANCE</span>
+              </span>
+              <span className="relative min-w-0 flex-1">
+                <span className="block text-base font-bold leading-tight text-white sm:text-lg">
+                  {t("crmButton.label")}
+                </span>
+                <span className="mt-1 block text-xs leading-snug text-white/50 sm:text-[13px]">
+                  {t("crmButton.sub")}
+                </span>
+              </span>
+              <span className="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white text-violet-700 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
+              </span>
+            </motion.a>
+
+            {/* Secondary actions: consultation + services */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55, duration: 0.7, ...SPRING }}
+              className="flex flex-wrap items-center gap-x-6 gap-y-3"
+            >
               <Link
                 href="/contacts"
-                className="group inline-flex items-center justify-between gap-3 pl-6 pr-2 py-2 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm shadow-xl shadow-violet-500/20 transition-colors duration-150 active:scale-[0.97]"
-                style={{ transition: "background-color 160ms ease-out, transform 100ms ease-out" }}
+                className="group inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-5 py-2.5 text-sm font-semibold text-white/85 transition-colors duration-200 hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
               >
                 {t("ctaPrimary")}
-                {/* Nested icon circle */}
-                <span className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5">
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </span>
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
               </Link>
-
-              {/* Secondary CTA */}
               <Link
                 href="/#services"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/8 text-white/70 hover:text-white font-medium text-sm border border-white/8 hover:border-white/15 transition-all duration-200"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-white/50 transition-colors duration-200 hover:text-white"
               >
                 {t("ctaSecondary")}
-                <ChevronDown className="w-3.5 h-3.5" />
+                <ChevronDown className="h-3.5 w-3.5" />
               </Link>
             </motion.div>
 
@@ -128,7 +155,7 @@ export function HeroSection() {
           >
             <AutomationFlow />
 
-            {/* Caption + quiet direct link to the product's free trial */}
+            {/* Caption + direct sign-up for the free trial */}
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs font-medium lg:justify-end">
               <Link
                 href="/projects"
@@ -138,7 +165,7 @@ export function HeroSection() {
               </Link>
               <span aria-hidden className="hidden h-3 w-px bg-white/10 sm:block" />
               <a
-                href={FINCRM_URL}
+                href={CRM_FINANCE_TRIAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-1 text-violet-300/80 underline decoration-violet-400/30 underline-offset-4 transition-colors duration-200 hover:text-violet-200 hover:decoration-violet-300/70"

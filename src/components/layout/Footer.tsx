@@ -1,5 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { ArrowUpRight } from "lucide-react";
+import { CRM_FINANCE_URL } from "@/lib/links";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -65,6 +67,17 @@ export function Footer() {
                 <Link href="/projects" className="text-white/35 hover:text-white text-sm transition-colors duration-150">
                   {t("projects")}
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={CRM_FINANCE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-violet-300/80 hover:text-white text-sm transition-colors duration-150"
+                >
+                  {t("crm")}
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
               </li>
               <li>
                 <Link href="/about" className="text-white/35 hover:text-white text-sm transition-colors duration-150">

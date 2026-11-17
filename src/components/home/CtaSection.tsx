@@ -3,7 +3,8 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { CRM_FINANCE_URL } from "@/lib/links";
 
 const SPRING = { ease: [0.16, 1, 0.3, 1] } as const;
 
@@ -64,17 +65,29 @@ export function CtaSection() {
                   {t("subtitle")}
                 </p>
 
-                {/* Nested pill button */}
-                <Link
-                  href="/contacts"
-                  className="group inline-flex items-center gap-3 pl-7 pr-2 py-2 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm shadow-2xl shadow-violet-500/30 active:scale-[0.97]"
-                  style={{ transition: "background-color 160ms ease-out, transform 100ms ease-out" }}
-                >
-                  {t("button")}
-                  <span className="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5">
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </Link>
+                <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+                  {/* Nested pill button */}
+                  <Link
+                    href="/contacts"
+                    className="group inline-flex items-center gap-3 pl-7 pr-2 py-2 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm shadow-2xl shadow-violet-500/30 active:scale-[0.97]"
+                    style={{ transition: "background-color 160ms ease-out, transform 100ms ease-out" }}
+                  >
+                    {t("button")}
+                    <span className="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5">
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+
+                  <a
+                    href={CRM_FINANCE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-6 py-[0.9rem] text-sm font-semibold text-white/85 transition-colors duration-200 hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
+                  >
+                    {t("crm")}
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
