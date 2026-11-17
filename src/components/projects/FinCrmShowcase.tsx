@@ -15,7 +15,9 @@ import {
   Sparkles,
   Wallet,
   ArrowRight,
+  ArrowUpRight,
 } from "lucide-react";
+import { CRM_FINANCE_TRIAL_URL } from "@/lib/links";
 
 const SPRING = { ease: [0.16, 1, 0.3, 1] } as const;
 
@@ -152,13 +154,24 @@ export function FinCrmShowcase() {
         <div className="relative p-8 md:p-12">
           <h3 className="text-white font-bold text-xl md:text-2xl mb-3">{t("saas.title")}</h3>
           <p className="text-white/45 text-base leading-relaxed max-w-2xl mb-6">{t("saas.text")}</p>
-          <Link
-            href="/contacts"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold transition-all duration-200 active:scale-[0.97] shadow-lg shadow-violet-500/20 w-fit"
-          >
-            {t("cta")}
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+            <a
+              href={CRM_FINANCE_TRIAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold transition-colors duration-200 active:scale-[0.97] shadow-lg shadow-violet-500/20 w-fit"
+            >
+              {t("ctaTrial")}
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
+            <Link
+              href="/contacts"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium text-white/55 transition-colors duration-200 hover:text-white w-fit"
+            >
+              {t("cta")}
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </Link>
+          </div>
         </div>
       </motion.div>
     </SectionWrapper>

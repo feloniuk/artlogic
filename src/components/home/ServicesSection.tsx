@@ -3,9 +3,8 @@
 import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Link } from "@/i18n/navigation";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
-import { ArrowRight, Database, FileText, Bot, Code2, Globe } from "lucide-react";
+import { Database, FileText, Bot, Code2, Globe } from "lucide-react";
 
 const SPRING = { ease: [0.16, 1, 0.3, 1] } as const;
 
@@ -64,7 +63,6 @@ function ServiceCard({
   featured,
   title,
   description,
-  learnMore,
   delay,
 }: {
   index: string;
@@ -74,7 +72,6 @@ function ServiceCard({
   featured: boolean;
   title: string;
   description: string;
-  learnMore: string;
   delay: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -140,18 +137,9 @@ function ServiceCard({
             {title}
           </h3>
 
-          <p className={`text-white/40 leading-relaxed mb-5 flex-1 ${featured ? "text-[0.95rem] max-w-xl" : "text-sm"}`}>
+          <p className={`text-white/40 leading-relaxed flex-1 ${featured ? "text-[0.95rem] max-w-xl" : "text-sm"}`}>
             {description}
           </p>
-
-          {/* Link */}
-          <Link
-            href="/contacts"
-            className={`inline-flex items-center gap-1.5 text-sm font-medium ${accent} hover:text-white transition-colors duration-150 group/link w-fit`}
-          >
-            {learnMore}
-            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5" />
-          </Link>
         </div>
       </div>
     </motion.div>
@@ -198,7 +186,6 @@ export function ServicesSection() {
             featured={service.featured}
             title={t(`${service.key}.title`)}
             description={t(`${service.key}.description`)}
-            learnMore={t("learnMore")}
             delay={i * 0.08}
           />
         ))}

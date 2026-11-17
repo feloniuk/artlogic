@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 import { PageBackground } from "@/components/ui/page-background";
+import { CookieConsent } from "@/components/shared/CookieConsent";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -46,6 +47,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           {children}
         </div>
       </LenisProvider>
+      <CookieConsent />
     </NextIntlClientProvider>
   );
 }

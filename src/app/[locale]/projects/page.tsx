@@ -5,6 +5,8 @@ import { Footer } from "@/components/layout/Footer";
 import { FinCrmShowcase } from "@/components/projects/FinCrmShowcase";
 import { CtaSection } from "@/components/home/CtaSection";
 import { GradientText } from "@/components/shared/GradientText";
+import { ArrowUpRight } from "lucide-react";
+import { CRM_FINANCE_URL } from "@/lib/links";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -38,6 +40,17 @@ export default async function ProjectsPage({ params }: Props) {
               <GradientText>{t("pageTitle")}</GradientText>
             </h1>
             <p className="text-white/40 text-lg leading-relaxed max-w-2xl mx-auto">{t("pageSubtitle")}</p>
+            <a
+              href={CRM_FINANCE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-9 inline-flex items-center gap-3 rounded-full bg-violet-600 py-2 pl-7 pr-2 text-sm font-semibold text-white shadow-2xl shadow-violet-500/30 transition-colors duration-150 hover:bg-violet-500 active:scale-[0.97]"
+            >
+              {t("ctaSite")}
+              <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-white/15 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
+            </a>
           </div>
         </section>
 

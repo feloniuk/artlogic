@@ -6,6 +6,8 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { CRM_FINANCE_URL } from "@/lib/links";
 
 const navLinks = [
   { href: "/", key: "home" },
@@ -90,13 +92,16 @@ export function Header() {
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-2">
             <LocaleSwitcher />
-            <Link
-              href="/contacts"
-              className="px-4 py-1.5 text-sm font-semibold rounded-full whitespace-nowrap bg-violet-600 hover:bg-violet-500 text-white transition-all duration-200 active:scale-[0.97] shadow-lg shadow-violet-500/25"
+            <a
+              href={CRM_FINANCE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 pl-4 pr-3 py-1.5 text-sm font-semibold rounded-full whitespace-nowrap bg-violet-600 hover:bg-violet-500 text-white active:scale-[0.97] shadow-lg shadow-violet-500/25"
               style={{ transition: "background-color 160ms ease-out, transform 100ms ease-out" }}
             >
-              {t("getStarted")}
-            </Link>
+              {t("crm")}
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:-translate-y-px group-hover:translate-x-px" />
+            </a>
           </div>
 
           {/* Mobile: locale + hamburger */}
@@ -179,13 +184,16 @@ export function Header() {
                 transition={{ delay: 0.34, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full max-w-xs mt-4"
               >
-                <Link
-                  href="/contacts"
+                <a
+                  href={CRM_FINANCE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileOpen(false)}
-                  className="block px-6 py-4 text-xl font-bold rounded-full bg-violet-600 hover:bg-violet-500 text-white text-center active:scale-[0.97] transition-all duration-150"
+                  className="flex items-center justify-center gap-2 px-6 py-4 text-xl font-bold rounded-full bg-violet-600 hover:bg-violet-500 text-white active:scale-[0.97] transition-all duration-150"
                 >
-                  {t("getStarted")}
-                </Link>
+                  {t("crm")}
+                  <ArrowUpRight className="w-5 h-5" />
+                </a>
               </motion.div>
             </motion.div>
           </motion.div>

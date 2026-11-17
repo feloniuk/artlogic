@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
+import { CRM_FINANCE_TRIAL_URL } from "@/lib/links";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -15,7 +16,7 @@ import {
 } from "lucide-react";
 
 const SPRING = { ease: [0.16, 1, 0.3, 1] } as const;
-const FINCRM_URL = "https://crm-finance.com.ua/";
+
 
 const INTEGRATIONS = ["Horoshop", "Prom.ua", "Нова Пошта", "WayForPay", "SMS-Fly", "Telegram"];
 const FACTS = ["integrations", "start", "trial"] as const;
@@ -243,7 +244,7 @@ export function FinCrmSpotlight() {
           {/* CTAs */}
           <div className="mt-[clamp(1.75rem,4vh,2.25rem)] flex flex-col gap-3 sm:flex-row">
             <a
-              href={FINCRM_URL}
+              href={CRM_FINANCE_TRIAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-between gap-3 rounded-full bg-violet-600 py-2 pl-6 pr-2 text-sm font-semibold text-white shadow-xl shadow-violet-500/20 transition-colors duration-150 hover:bg-violet-500 active:scale-[0.97]"
