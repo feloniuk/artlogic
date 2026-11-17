@@ -131,7 +131,7 @@ const config: Config = {
         "page-top": "clamp(7rem, 16vh, 9rem)",
       },
       fontSize: {
-        display: ["clamp(2.5rem, min(2.6vw + 1.6rem, 6.3vh), 3.9rem)", { lineHeight: "1.06" }],
+        display: ["clamp(2.5rem, min(4.2vw, 6.3vh), 3.9rem)", { lineHeight: "1.06" }],
         "page-title": ["clamp(2.25rem, min(2.2vw + 1.5rem, 5.8vh), 3.5rem)", { lineHeight: "1.1" }],
         title: ["clamp(1.875rem, min(2.2vw + 1.4rem, 5.2vh), 3rem)", { lineHeight: "1.1" }],
       },
