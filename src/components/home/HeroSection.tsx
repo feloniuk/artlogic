@@ -21,15 +21,15 @@ export function HeroSection() {
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-violet-700/8 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-indigo-600/6 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full pt-28 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[75vh]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full pt-[clamp(6rem,12vh,8rem)] pb-[clamp(3rem,8vh,5rem)]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.08fr_1fr] gap-12 lg:gap-[clamp(2.5rem,4.5vw,4rem)] items-center">
 
           {/* Left content */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ...SPRING }}
-            className="flex flex-col gap-7"
+            className="flex flex-col gap-7 lg:gap-[clamp(1.25rem,2.8vh,1.75rem)]"
           >
             {/* Eyebrow tag */}
             <motion.div
@@ -48,7 +48,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25, duration: 0.8, ...SPRING }}
-              className="text-[2.6rem] md:text-[3.5rem] lg:text-[3.5rem] xl:text-[3.9rem] font-extrabold leading-[1.06] tracking-[-0.025em] text-white text-balance"
+              className="text-[2.6rem] leading-[1.06] md:text-[3.5rem] lg:text-display font-extrabold tracking-[-0.025em] text-white text-balance"
             >
               {t("title")}
               <br />
@@ -129,7 +129,7 @@ export function HeroSection() {
             <AutomationFlow />
 
             {/* Caption + quiet direct link to the product's free trial */}
-            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs font-medium lg:justify-end">
+            <div className="mt-5 lg:mt-[clamp(0.75rem,2vh,1.25rem)] flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs font-medium lg:justify-end">
               <Link
                 href="/projects"
                 className="text-white/40 transition-colors duration-200 hover:text-white"
@@ -156,7 +156,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1"
+        className="absolute bottom-[clamp(0.75rem,2.5vh,2rem)] left-1/2 -translate-x-1/2 hidden lg:flex [@media(max-height:780px)]:!hidden flex-col items-center gap-1"
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}

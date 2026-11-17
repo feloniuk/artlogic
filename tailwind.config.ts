@@ -123,6 +123,18 @@ const config: Config = {
           "100%": { transform: "translateY(-50%)" },
         },
       },
+      /* Viewport-aware rhythm. Laptops like a 14" MacBook (1512×982 screen,
+         ~1512×860 browser viewport) are wide but short, so vertical spacing
+         and display type scale with min(width, height) instead of width only. */
+      spacing: {
+        section: "clamp(4rem, 10vh, 8rem)",
+        "page-top": "clamp(7rem, 16vh, 9rem)",
+      },
+      fontSize: {
+        display: ["clamp(2.5rem, min(2.6vw + 1.6rem, 6.3vh), 3.9rem)", { lineHeight: "1.06" }],
+        "page-title": ["clamp(2.25rem, min(2.2vw + 1.5rem, 5.8vh), 3.5rem)", { lineHeight: "1.1" }],
+        title: ["clamp(1.875rem, min(2.2vw + 1.4rem, 5.2vh), 3rem)", { lineHeight: "1.1" }],
+      },
       fontFamily: {
         sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
       },

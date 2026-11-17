@@ -30,13 +30,13 @@ export default async function AboutPage({ params }: Props) {
       <Header />
       <main className="pt-16">
         {/* Page hero */}
-        <section className="relative py-24 md:py-36 px-4 md:px-8 overflow-hidden">
+        <section className="relative pt-page-top pb-section px-4 md:px-8 overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-violet-700/8 rounded-full blur-[100px] pointer-events-none" />
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[10px] uppercase tracking-[0.18em] font-medium text-white/40 mb-6">
               ArtLogic
             </span>
-            <h1 className="text-4xl md:text-[3.5rem] font-extrabold text-white mb-5 tracking-[-0.025em] text-balance leading-tight">
+            <h1 className="text-4xl leading-tight md:text-page-title font-extrabold text-white mb-5 tracking-[-0.025em] text-balance">
               <GradientText>{t("pageTitle")}</GradientText>
             </h1>
             <p className="text-white/40 text-lg leading-relaxed max-w-2xl mx-auto">{t("pageSubtitle")}</p>

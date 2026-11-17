@@ -119,7 +119,7 @@ export function FinCrmShowcase() {
         <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/[0.06] px-3 py-1 text-[10px] uppercase tracking-[0.18em] font-medium text-violet-300 mb-5">
           {t("badge")}
         </span>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-[-0.02em] leading-tight mb-5">
+        <h2 className="text-3xl leading-tight md:text-title font-extrabold text-white tracking-[-0.02em] mb-5">
           {t("title")}
         </h2>
         <p className="text-white/45 text-base md:text-lg leading-relaxed mb-3">{t("description")}</p>

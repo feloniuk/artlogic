@@ -11,7 +11,7 @@ export function CtaSection() {
   const t = useTranslations("cta");
 
   return (
-    <section className="py-28 px-4 md:px-8 relative overflow-hidden snap-section min-h-[60dvh] flex items-center">
+    <section className="py-section px-4 md:px-8 relative overflow-hidden snap-section min-h-[60dvh] flex items-center">
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-violet-700/8 rounded-full blur-[100px]" />
@@ -48,19 +48,19 @@ export function CtaSection() {
               {/* Glow inside card */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-violet-600/12 rounded-full blur-3xl pointer-events-none" />
 
-              <div className="relative px-10 py-14 md:px-20 md:py-20 text-center">
+              <div className="relative px-10 py-14 md:px-20 md:py-[clamp(3rem,8vh,5rem)] text-center">
                 {/* Icon pill */}
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-violet-600/20 border border-violet-500/25 mb-8 mx-auto">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-violet-600/20 border border-violet-500/25 mb-[clamp(1.25rem,3.5vh,2rem)] mx-auto">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 2L13 8H17L14 12L15.5 18L10 15L4.5 18L6 12L3 8H7L10 2Z" fill="#a78bfa" fillOpacity="0.9" />
                   </svg>
                 </div>
 
-                <h2 className="text-3xl md:text-[2.8rem] font-extrabold text-white mb-4 tracking-[-0.025em] text-balance leading-tight">
+                <h2 className="text-3xl md:text-title font-extrabold text-white mb-4 tracking-[-0.025em] text-balance">
                   {t("title")}
                 </h2>
 
-                <p className="text-white/40 text-[1rem] mb-10 max-w-xl mx-auto leading-relaxed" style={{ textWrap: "pretty" } as React.CSSProperties}>
+                <p className="text-white/40 text-[1rem] mb-[clamp(1.75rem,5vh,2.5rem)] max-w-xl mx-auto leading-relaxed" style={{ textWrap: "pretty" } as React.CSSProperties}>
                   {t("subtitle")}
                 </p>
 

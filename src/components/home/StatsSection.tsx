@@ -17,19 +17,19 @@ export function StatsSection() {
   const t = useTranslations("advantages");
 
   return (
-    <section className="relative px-4 py-24 md:px-8 md:py-32">
+    <section className="relative px-4 py-section md:px-8">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ...SPRING }}
-          className="mb-12 md:mb-16"
+          className="mb-[clamp(2rem,7vh,4rem)]"
         >
           <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white/40">
             {t("eyebrow")}
           </span>
-          <h2 className="max-w-xl text-3xl font-extrabold leading-tight tracking-[-0.02em] text-white md:text-5xl">
+          <h2 className="max-w-xl text-3xl font-extrabold tracking-[-0.02em] text-white md:text-title">
             {t("title")} <span className="text-violet-400">{t("titleHighlight")}</span>
           </h2>
         </motion.div>
@@ -42,14 +42,14 @@ export function StatsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ delay: i * 0.08, duration: 0.7, ...SPRING }}
-              className={`group relative border-b border-white/[0.08] py-8 sm:px-7 lg:border-b-0 lg:py-10 ${
+              className={`group relative border-b border-white/[0.08] py-8 sm:px-7 lg:border-b-0 lg:py-[clamp(1.75rem,4.5vh,2.5rem)] ${
                 i % 2 === 0 ? "sm:pl-0" : "sm:border-l"
               } ${i === 0 ? "lg:pl-0" : "lg:border-l lg:pl-7"}`}
             >
               {/* Accent line that grows on hover */}
               <span className="absolute left-0 top-[-1px] h-px w-0 bg-violet-400 transition-all duration-500 ease-out group-hover:w-full" />
 
-              <div className="mb-8 flex items-center justify-between">
+              <div className="mb-[clamp(1.25rem,3.5vh,2rem)] flex items-center justify-between">
                 <span className="font-mono text-xs text-violet-400/80">
                   {String(i + 1).padStart(2, "0")}
                 </span>

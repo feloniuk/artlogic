@@ -125,9 +125,9 @@ function ServiceCard({
           <div className="absolute top-6 left-6 w-32 h-32 bg-violet-600/10 rounded-full blur-2xl pointer-events-none" />
         )}
 
-        <div className={`relative p-7 ${featured ? "md:p-10" : ""} flex flex-col h-full min-h-[180px]`}>
+        <div className={`relative p-7 lg:p-[clamp(1.5rem,3vh,1.75rem)] ${featured ? "md:p-10 lg:p-[clamp(1.75rem,4vh,2.5rem)]" : ""} flex flex-col h-full min-h-[180px]`}>
           {/* Icon */}
-          <div className="mb-5 flex items-start justify-between">
+          <div className="mb-5 lg:mb-[clamp(0.875rem,2.2vh,1.25rem)] flex items-start justify-between">
             <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center transition-all duration-300 group-hover:bg-violet-500/15 group-hover:border-violet-500/30">
               <Icon className={`w-5 h-5 ${accent}`} strokeWidth={1.5} />
             </div>
@@ -140,7 +140,7 @@ function ServiceCard({
             {title}
           </h3>
 
-          <p className={`text-white/40 leading-relaxed mb-5 flex-1 ${featured ? "text-[0.95rem] max-w-md" : "text-sm"}`}>
+          <p className={`text-white/40 leading-relaxed mb-5 flex-1 ${featured ? "text-[0.95rem] max-w-xl" : "text-sm"}`}>
             {description}
           </p>
 
@@ -168,14 +168,14 @@ export function ServicesSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ...SPRING }}
-        className="mb-14"
+        className="mb-[clamp(2rem,6vh,3.5rem)]"
       >
         {/* Eyebrow */}
         <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-3 py-1 text-[10px] uppercase tracking-[0.18em] font-medium text-white/40 mb-5">
           {t("subtitle")}
         </span>
 
-        <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-[-0.02em] leading-tight max-w-xl">
+        <h2 className="text-3xl md:text-title font-extrabold text-white tracking-[-0.02em] max-w-xl">
           {t("title").split(" ").map((word, i, arr) =>
             i === arr.length - 1 ? (
               <span key={i} className="text-violet-400">{word}</span>

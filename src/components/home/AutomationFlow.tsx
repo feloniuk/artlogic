@@ -214,7 +214,7 @@ export function AutomationFlow() {
           </div>
 
           {/* Flow */}
-          <div ref={flowRef} className="relative h-[250px] sm:h-[300px]">
+          <div ref={flowRef} className="relative h-[250px] sm:h-[300px] lg:h-[clamp(240px,31vh,300px)]">
             {geo && size && (
               <>
                 <svg

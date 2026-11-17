@@ -99,7 +99,7 @@ function ProductMock() {
                     18,4%
                   </span>
                 </div>
-                <svg viewBox="0 0 300 70" preserveAspectRatio="none" className="mt-3 h-16 w-full" fill="none">
+                <svg viewBox="0 0 300 70" preserveAspectRatio="none" className="mt-3 h-[clamp(3rem,6.5vh,4rem)] w-full" fill="none">
                   <defs>
                     <linearGradient id="fincrm-area" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0" stopColor="#7c3aed" stopOpacity="0.35" />
@@ -179,10 +179,10 @@ export function FinCrmSpotlight() {
   const t = useTranslations("fincrmHome");
 
   return (
-    <section id="fincrm" className="relative overflow-hidden px-4 py-24 md:px-8 md:py-32">
+    <section id="fincrm" className="relative overflow-hidden px-4 py-section md:px-8">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:gap-[clamp(3rem,5.5vw,5rem)]">
         {/* Copy */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
@@ -195,18 +195,18 @@ export function FinCrmSpotlight() {
             {t("eyebrow")}
           </span>
 
-          <h2 className="text-balance text-3xl font-extrabold leading-[1.1] tracking-[-0.02em] text-white md:text-[2.75rem]">
+          <h2 className="text-balance text-3xl font-extrabold leading-[1.1] tracking-[-0.02em] text-white md:text-title">
             {t("title")} <span className="text-violet-400">{t("titleHighlight")}</span>
           </h2>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-white/50">{t("text")}</p>
 
           {/* Facts */}
-          <dl className="mt-9 grid grid-cols-3 border-y border-white/[0.08]">
+          <dl className="mt-[clamp(1.75rem,4vh,2.25rem)] grid grid-cols-3 border-y border-white/[0.08]">
             {FACTS.map((fact, i) => (
               <div
                 key={fact}
-                className={`py-5 ${i > 0 ? "border-l border-white/[0.08] pl-4 sm:pl-6" : ""} ${
+                className={`py-[clamp(0.875rem,2.2vh,1.25rem)] ${i > 0 ? "border-l border-white/[0.08] pl-4 sm:pl-6" : ""} ${
                   i < FACTS.length - 1 ? "pr-3" : ""
                 }`}
               >
@@ -224,7 +224,7 @@ export function FinCrmSpotlight() {
           </dl>
 
           {/* Integrations */}
-          <div className="mt-7">
+          <div className="mt-[clamp(1.25rem,3vh,1.75rem)]">
             <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.18em] text-white/30">
               {t("integrationsLabel")}
             </p>
@@ -241,7 +241,7 @@ export function FinCrmSpotlight() {
           </div>
 
           {/* CTAs */}
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-[clamp(1.75rem,4vh,2.25rem)] flex flex-col gap-3 sm:flex-row">
             <a
               href={FINCRM_URL}
               target="_blank"
