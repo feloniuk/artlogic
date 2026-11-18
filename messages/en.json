@@ -13,13 +13,10 @@
     "title": "CRM Systems & Automation",
     "titleHighlight": "for Small & Medium Business",
     "subtitle": "We build CRM systems, financial solutions and automate business processes. A personalized approach to every client — from task analysis to implementation and ongoing support.",
-    "ctaPrimary": "Get a Consultation",
-    "ctaSecondary": "Our Services",
     "trustClients": "Personalized approach",
     "trustSupport": "24/7 Support",
     "crmButton": {
-      "label": "Go to CRM Finance",
-      "sub": "Our product for online stores · 14 days free"
+      "label": "Try CRM for free"
     },
     "flow": {
       "aria": "Diagram: an order from Horoshop, Prom.ua or the API flows through CRM Finance automatically — invoice, waybill, customer notification and bookkeeping",

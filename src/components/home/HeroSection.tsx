@@ -5,8 +5,8 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import { AutomationFlow } from "@/components/home/AutomationFlow";
-import { CRM_FINANCE_TRIAL_URL, CRM_FINANCE_URL } from "@/lib/links";
-import { ArrowRight, ArrowUpRight, ChevronDown, UserCheck } from "lucide-react";
+import { CRM_FINANCE_TRIAL_URL } from "@/lib/links";
+import { ArrowUpRight, UserCheck } from "lucide-react";
 
 const SPRING = { ease: [0.16, 1, 0.3, 1] } as const;
 
@@ -66,9 +66,9 @@ export function HeroSection() {
               {t("subtitle")}
             </motion.p>
 
-            {/* Primary CTA — our product, CRM Finance */}
+            {/* Primary CTA — free trial of our product, CRM Finance */}
             <motion.a
-              href={CRM_FINANCE_URL}
+              href={CRM_FINANCE_TRIAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
@@ -91,37 +91,11 @@ export function HeroSection() {
                 <span className="block text-base font-bold leading-tight text-white sm:text-lg">
                   {t("crmButton.label")}
                 </span>
-                <span className="mt-1 block text-xs leading-snug text-white/50 sm:text-[13px]">
-                  {t("crmButton.sub")}
-                </span>
               </span>
               <span className="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white text-violet-700 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                 <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
               </span>
             </motion.a>
-
-            {/* Secondary actions: consultation + services */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, duration: 0.7, ...SPRING }}
-              className="flex flex-wrap items-center gap-x-6 gap-y-3"
-            >
-              <Link
-                href="/contacts"
-                className="group inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-5 py-2.5 text-sm font-semibold text-white/85 transition-colors duration-200 hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
-              >
-                {t("ctaPrimary")}
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-              </Link>
-              <Link
-                href="/#services"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-white/50 transition-colors duration-200 hover:text-white"
-              >
-                {t("ctaSecondary")}
-                <ChevronDown className="h-3.5 w-3.5" />
-              </Link>
-            </motion.div>
 
             {/* Trust indicators */}
             <motion.div
